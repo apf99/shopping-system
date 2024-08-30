@@ -11,7 +11,7 @@ class Article:
         self.stock = df.loc[df['id'] == int(self.article_id), 'in stock'].squeeze()
 
     def available(self):
-        return self.stock > 0
+        return self.stock
 
     def purchase(self):
         df.loc[df['id'] == int(self.article_id), 'in stock'] -= 1
